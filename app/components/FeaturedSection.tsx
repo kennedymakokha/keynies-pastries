@@ -69,19 +69,7 @@ function FeaturedSection() {
 
   const [sortKey, setSortKey] = useState("name");
   const [minRating, setMinRating] = useState(0);
-  const [reviews, setReviews] = useState<{
-    [key: string]: { name: string; rating: number; comment: string }[];
-  }>({});
 
-  const handleReviewSubmit = (
-    pastryName: string,
-    review: { name: string; rating: number; comment: string }
-  ) => {
-    setReviews((prev) => ({
-      ...prev,
-      [pastryName]: [...(prev[pastryName] || []), review],
-    }));
-  };
 
   const filteredPastries = useMemo(() => {
     return allPastries
