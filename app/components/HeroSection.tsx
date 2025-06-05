@@ -29,7 +29,7 @@ export default function Hero() {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
         }, 3000);
         return () => clearInterval(interval);
-    }, []);
+    }, [images.length]);
 
     return (
         <section id="home" className="relative flex items-center justify-center h-screen text-center px-6 overflow-hidden">

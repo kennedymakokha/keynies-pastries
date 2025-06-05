@@ -3,6 +3,7 @@
 import React from 'react';
 import { Star } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -87,7 +88,9 @@ export default function MenuPage() {
                     <motion.div key={index} variants={fadeInUp}>
                         <div className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-xl bg-white">
                             <motion.div {...scaleOnHover}>
-                                <img
+                                <Image
+                                    width={400}
+                                    height={300}
                                     src={pastry.image}
                                     alt={pastry.name}
                                     className="w-full h-64 object-cover"

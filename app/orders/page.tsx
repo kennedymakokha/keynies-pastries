@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PackageCheck, Loader2, Truck, X } from 'lucide-react';
+import Image from 'next/image';
 
 const orders = [
   {
@@ -51,7 +52,7 @@ export default function MyOrders() {
                 whileHover={{ scale: 1.02 }}
                 className="bg-white border border-amber-200 rounded-lg shadow-sm flex flex-col md:flex-row md:items-center gap-4 p-4"
               >
-                <img
+                <Image  height={100} width={100}
                   src={order.image}
                   alt={order.item}
                   className="w-24 h-24 object-cover rounded-md"
