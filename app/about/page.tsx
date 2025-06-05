@@ -2,7 +2,7 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { ChefHat, Heart, Award } from "lucide-react";
-import Image from 'next/image';
+
 function AboutSection() {
     return (
         <section id="about" className="py-20 bg-gradient-to-r from-amber-100 to-orange-100">
@@ -14,13 +14,13 @@ function AboutSection() {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <Image
-                            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop"
-                            alt="Baker at work"
-                            width={600}
-                            height={400}
-                            className="rounded-2xl shadow-lg"
-                            layout="responsive"
+                        <video
+                            className="rounded-2xl shadow-lg w-full h-auto"
+                            src="/about.mp4"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
                         />
 
                     </motion.div>
