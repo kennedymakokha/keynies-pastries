@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/Button";
+import Link from "next/link";
 
 export default function Hero() {
     const fadeInUp = {
@@ -20,7 +21,7 @@ export default function Hero() {
 
     // Use images from the public folder
     const images = ["/images/cake1.webp", "/images/cake2.jpeg", "/images/cake3.jpg"];
-    
+
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
@@ -32,10 +33,10 @@ export default function Hero() {
 
     return (
         <section id="home" className="relative flex items-center justify-center h-screen text-center px-6 overflow-hidden">
-            
+
             {/* Background Image Slider */}
             <div className="absolute inset-0 transition-all duration-1000 bg-cover bg-center"
-                 style={{ backgroundImage: `url(${images[currentIndex]})` }}>
+                style={{ backgroundImage: `url(${images[currentIndex]})` }}>
             </div>
 
             {/* Dark Overlay */}
@@ -72,7 +73,7 @@ export default function Hero() {
                     >
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                             <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 text-lg">
-                                View Our Menu
+                                <Link href='/menu'> View Our Menu</Link>
                             </Button>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
